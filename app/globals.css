@@ -12,6 +12,27 @@ body,
   --animate-duration: .5s;
 }
 
+.cl-rootBox {
+  /* margin-top: 1em; */
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+
+.cl-signIn-start {
+  margin-top: 10em;
+}
+
+.cl-signUp-start {
+  margin-top: 10em;
+}
+
+/* Transicion fadein de cl-rootBox  */
+
+
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

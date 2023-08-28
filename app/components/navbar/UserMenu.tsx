@@ -1,19 +1,23 @@
 "use client"
 
-import { AiOutlineMenu } from "react-icons/ai"
-import { Avatar } from "../Avatar"
+// import { AiOutlineMenu } from "react-icons/ai"
+// import { Avatar } from "../Avatar"
 import { useCallback, useState } from "react"
 import { MenuItem } from "./MenuItem"
 import 'animate.css';
+import { UserButton, useAuth } from "@clerk/nextjs"
+import { Avatar } from "../Avatar";
 
 export const UserMenu = () => {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const { userId } = useAuth()
 
-    const toggleOpen = useCallback(() => {
-        setIsOpen(!isOpen)
+    // const [isOpen, setIsOpen] = useState(false)
 
-    }, [isOpen])
+    // const toggleOpen = useCallback(() => {
+    //     setIsOpen(!isOpen)
+
+    // }, [isOpen])
 
 
 
@@ -36,7 +40,12 @@ export const UserMenu = () => {
                 >
                     Airbnb your home
                 </div>
-                <div
+
+                {
+                    userId ? <UserButton afterSignOutUrl="/" /> : <Avatar />
+                }
+                
+                {/* <div
                     onClick={toggleOpen}
                     className="
                     p-4
@@ -53,12 +62,13 @@ export const UserMenu = () => {
                     hover:shadow-md
                     transition
                     "
-                >
-                    <AiOutlineMenu />
-                    <Avatar />
-                </div>
+                > */}
+                {/* <AiOutlineMenu /> */}
+                {/* <Avatar /> */}
+                {/* </div> */}
+
             </div>
-            {
+            {/* {
                 isOpen && (
                     <div
                         className="
@@ -89,7 +99,7 @@ export const UserMenu = () => {
                         </div>
                     </div>
                 )
-            }
+            } */}
         </div>
     )
 }

@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter, Nunito } from 'next/font/google'
 import { Navbar } from './components/navbar/Navbar'
 
+import { ClerkProvider } from '@clerk/nextjs'
+
 const inter = Inter({ subsets: ['latin'] })
 
 const font = Nunito({
@@ -20,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className={font.className}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="es">
+        <body className={font.className}>
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
