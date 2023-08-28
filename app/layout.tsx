@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Nunito } from 'next/font/google'
 import { Navbar } from './components/navbar/Navbar'
+import { ThemeProvider } from "@/components/theme-provider"
 
 import { ClerkProvider } from '@clerk/nextjs'
 
@@ -23,10 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="es">
+      <html lang="es" suppressHydrationWarning>
         <body className={font.className}>
-          <Navbar />
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

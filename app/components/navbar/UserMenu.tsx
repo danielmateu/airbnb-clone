@@ -1,23 +1,23 @@
 "use client"
 
-// import { AiOutlineMenu } from "react-icons/ai"
-// import { Avatar } from "../Avatar"
-import { useCallback, useState } from "react"
-import { MenuItem } from "./MenuItem"
 import 'animate.css';
 import { UserButton, useAuth } from "@clerk/nextjs"
-import { Avatar } from "../Avatar";
+import { MenuItem } from './MenuItem';
+import { BiSolidHome } from 'react-icons/bi';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Sparkles } from 'lucide-react';
+
 
 export const UserMenu = () => {
 
     const { userId } = useAuth()
 
-    // const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
-    // const toggleOpen = useCallback(() => {
-    //     setIsOpen(!isOpen)
-
-    // }, [isOpen])
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
+    }
 
 
 
@@ -33,73 +33,28 @@ export const UserMenu = () => {
                     py-2
                     px-4
                     rounded-full
-                    hover:bg-neutral-100
                     transition
                     cursor-pointer
                     "
                 >
-                    Airbnb your home
+                    <BiSolidHome className='text-2xl hover:scale-105 hover:text-rose-500 transition' onClick={toggleMenu} />
+
+                    {
+                        isOpen && (
+                            <div className='absolute top-10 right-0 bg-white shadow-md rounded-md animate__animated animate__fadeIn animate__faster'>
+                                <Button variant={'premium'} >
+                                    Upgrade!
+                                    <Sparkles className='inline-block ml-2' />
+                                </Button>
+                            </div>
+                        )
+                    }
                 </div>
 
-                {
-                    userId ? <UserButton afterSignOutUrl="/" /> : <Avatar />
-                }
-                
-                {/* <div
-                    onClick={toggleOpen}
-                    className="
-                    p-4
-                    md:py-1
-                    md:px-2
-                    border-[1px]
-                    border-neutral-200
-                    flex 
-                    flex-row
-                    items-center
-                    gap-3
-                    rounded-full
-                    cursor-pointer
-                    hover:shadow-md
-                    transition
-                    "
-                > */}
-                {/* <AiOutlineMenu /> */}
-                {/* <Avatar /> */}
-                {/* </div> */}
-
+                <div className="hover:scale-110 transition">
+                    {userId && <UserButton afterSignOutUrl="/" />}
+                </div>
             </div>
-            {/* {
-                isOpen && (
-                    <div
-                        className="
-                        absolute
-                        rounded-xl
-                        shadow-md
-                        w-[40vw]
-                        md:w-3/4
-                        bg-white
-                        overflow-hidden
-                        right-0
-                        top-14
-                        text-sm
-                        animate__animated animate__fadeIn
-                        "
-                    >
-                        <div className="flex flex-col cursor-pointer">
-                            <>
-                                <MenuItem
-                                    label="Login"
-                                    onClick={() => { }}
-                                />
-                                <MenuItem
-                                    label="Sign up"
-                                    onClick={() => { }}
-                                />
-                            </>
-                        </div>
-                    </div>
-                )
-            } */}
         </div>
     )
 }
