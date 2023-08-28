@@ -6,6 +6,7 @@ export const Search = () => {
     return (
         <div className="
         border-[1px]
+        dark:border-[0px]
         w-full
         md:w-auto
         py-2
@@ -34,7 +35,7 @@ export const Search = () => {
                 items-center
                 gap-3
                 ">
-                    <div className="hidden sm:block">
+                    <div className="hidden sm:block dark:text-gray-300">
                         Add Guests
                     </div>
                     <div className="p-2 bg-rose-500 rounded-full text-white">

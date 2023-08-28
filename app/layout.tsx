@@ -1,10 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Nunito } from 'next/font/google'
-import { Navbar } from './components/navbar/Navbar'
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { ClerkProvider } from '@clerk/nextjs'
+
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -7,6 +7,7 @@ import { BiSolidHome } from 'react-icons/bi';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles } from 'lucide-react';
+import { ModeToggle } from '@/components/mode-toggle';
 
 
 export const UserMenu = () => {
@@ -24,7 +25,7 @@ export const UserMenu = () => {
     return (
         <div className='relative'>
             <div className="flex flex-row items-center gap-3">
-                <div onClick={() => { }}
+                {/* <div onClick={() => { }}
                     className="
                     hidden
                     md:block
@@ -38,7 +39,6 @@ export const UserMenu = () => {
                     "
                 >
                     <BiSolidHome className='text-2xl hover:scale-105 hover:text-rose-500 transition' onClick={toggleMenu} />
-
                     {
                         isOpen && (
                             <div className='absolute top-10 right-0 bg-white shadow-md rounded-md animate__animated animate__fadeIn animate__faster'>
@@ -49,7 +49,9 @@ export const UserMenu = () => {
                             </div>
                         )
                     }
-                </div>
+                </div> */}
+
+                <ModeToggle />
 
                 <div className="hover:scale-110 transition">
                     {userId && <UserButton afterSignOutUrl="/" />}
