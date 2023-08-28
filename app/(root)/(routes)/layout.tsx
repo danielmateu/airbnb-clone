@@ -1,7 +1,7 @@
 "use client"
 
 import ClientOnly from "@/components/ClientOnly"
-import { Modal } from "@/components/modals/Modal"
+// import { Modal } from "@/components/modals/Modal"
 import { Navbar } from "@/components/navbar/Navbar"
 
 const RootLayout = ({
@@ -12,16 +12,17 @@ const RootLayout = ({
     return (
         <div className="h-full">
             <ClientOnly>
-                <Modal
+                {/* <Modal
                     isOpen={true}
                     onClose={() => { }}
                     onSubmit={() => { }}
                     title="Hello World"
-                    body={<div>Modal Body</div>}
-                    footer={<div>Modal Footer</div>}
-                    actionLabel="Action Label"
+                    body={<p className="text-center">This is the Modal Body</p>}
+                    footer={<p className="text-center">Modal Footer</p>}
+                    actionLabel=""
                     disabled={false}
-                />
+                    secondaryLabel='My Button'
+                /> */}
                 <Navbar />
             </ClientOnly>
             <main className="py-20 px-12">

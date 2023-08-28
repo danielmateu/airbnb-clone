@@ -2,6 +2,7 @@
 
 import { IoMdClose } from "react-icons/io"
 import { useCallback, useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 
 interface ModalProps {
@@ -110,7 +111,7 @@ export const Modal: React.FC<ModalProps> = ({
                         focus:outline-none
                         ">
                             {/*header*/}
-                            <div className="flex
+                            <header className="flex
                             items-center
                             p-6
                             rounded-t
@@ -130,10 +131,37 @@ export const Modal: React.FC<ModalProps> = ({
                                 ">
                                     <IoMdClose size={18} className='dark:text-black' />
                                 </button>
-                                <div className="text-lg font-semibold dark:text-black">
+                                <p className="text-lg font-semibold dark:text-black">
                                     {title}
+                                </p>
+                            </header>
+                            {/*body*/}
+                            <section className="dark:text-black relative p-6 flex-auto">
+                                {body}
+                            </section>
+                            {/*footer*/}
+                            <footer className="flex
+                            flex-col
+                            gap-2
+                            p-6 dark:text-black ">
+                                <div className="flex
+                                flex-row
+                                items-center
+                                gap-4
+                                w-full
+                                ">
+                                    <Button
+                                        disabled={disabled}
+                                        onClick={handleSubmit}
+                                        className="relative w-full dark:text-black"
+                                        variant={'ghost'}
+
+                                    >
+                                        {secondaryLabel}
+                                    </Button>
                                 </div>
-                            </div>
+                                {footer}
+                            </footer>
                         </div>
                     </div>
                 </div>
