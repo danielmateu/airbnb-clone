@@ -6,7 +6,7 @@ interface ClientOnlyProps {
     children: React.ReactNode
 }
 
-const ClientOnly = ({
+const ClientOnly: React.FC<ClientOnlyProps> = ({
     children
 }: {
     children: React.ReactNode
@@ -21,6 +21,7 @@ const ClientOnly = ({
     if (!hasMounted) {
         return null
     }
+
     return (
         <>
             {children}

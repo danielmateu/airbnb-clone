@@ -4,6 +4,7 @@ import { Inter, Nunito } from 'next/font/google'
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { ClerkProvider } from '@clerk/nextjs'
+import ClientOnly from '@/components/ClientOnly'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,8 +27,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="es" suppressHydrationWarning>
         <body className={font.className}>
+
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
+            <ClientOnly>
+              {children}
+            </ClientOnly>
           </ThemeProvider>
         </body>
       </html>

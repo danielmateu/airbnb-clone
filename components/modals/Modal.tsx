@@ -48,7 +48,6 @@ export const Modal: React.FC<ModalProps> = ({
     }, [disabled, onClose])
 
     const handleSubmit = useCallback(() => {
-
         if (disabled) return
 
         onSubmit()
@@ -66,7 +65,8 @@ export const Modal: React.FC<ModalProps> = ({
 
     return (
         <>
-            <div className="flex
+            <div className="
+            flex
             justify-center
             items-center
             overflow-x-hidden
@@ -75,17 +75,17 @@ export const Modal: React.FC<ModalProps> = ({
             z-50
             outline-none
             focus:outline-none
-            bg-neutral-800/70
+            bg-neutral-800/50
             ">
-                <div className="relative
-                w-full
+                <div className="
+                relative
+                w-5/6
                 md:w-4/6
                 lg:w-3/6
                 xl:w-2/5
                 my-6
                 mx-auto
-                h-full
-                lg:h-auto
+                h-3/6
                 md:h-auto
                 ">
                     {/*content*/}

@@ -15,12 +15,13 @@ export const Navbar = () => {
                     items-center 
                     justify-between 
                     gap-3 
-                    md:gap-0 px-4
+                    md:gap-0 
+                    px-4
+                    py-2
                     "
                 >
                     <Logo />
                     <Search />
-
                     <UserMenu />
                 </div>
             </div>

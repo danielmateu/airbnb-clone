@@ -25,37 +25,52 @@ export const UserMenu = () => {
     return (
         <div className='relative'>
             <div className="flex flex-row items-center gap-3">
-                {/* <div onClick={() => { }}
+
+                <div
                     className="
                     hidden
-                    md:block
-                    text-sm
-                    font-semibold
+                    lg:block
+                    gap-3
                     py-2
                     px-4
+                    w-full
+                    md:w-auto
                     rounded-full
+                    hover:bg-gray-100
+                    transition
+                    cursor-pointer
+                    font-semibold
+                    "
+                >
+                    Pon tu casa en Airbnb
+                </div>
+
+                <div
+                    className="
+                    flex
+                    items-center
+                    justify-between
+                    gap-3
+                    py-1
+                    px-3
+                    border-[1px]
+                    dark:border-[0px]
+                    w-full
+                    md:w-auto
+                    rounded-full
+                    shadow-sm
+                    hover:shadow-md
                     transition
                     cursor-pointer
                     "
                 >
-                    <BiSolidHome className='text-2xl hover:scale-105 hover:text-rose-500 transition' onClick={toggleMenu} />
-                    {
-                        isOpen && (
-                            <div className='absolute top-10 right-0 bg-white shadow-md rounded-md animate__animated animate__fadeIn animate__faster'>
-                                <Button variant={'premium'} >
-                                    Upgrade!
-                                    <Sparkles className='inline-block ml-2' />
-                                </Button>
-                            </div>
-                        )
-                    }
-                </div> */}
-
-                <ModeToggle />
-
-                <div className="hover:scale-110 transition">
-                    {userId && <UserButton afterSignOutUrl="/" />}
+                    <ModeToggle />
+                    <div className="hover:scale-110 transition">
+                        {userId && <UserButton afterSignOutUrl="/" />}
+                    </div>
                 </div>
+
+
             </div>
         </div>
     )
