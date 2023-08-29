@@ -1,5 +1,7 @@
 "use client"
 
+import { Modal } from "@/components/modals/Modal"
+
 const AuthLayout = ({
     children
 }: {

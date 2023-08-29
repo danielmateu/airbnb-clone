@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import { ClerkProvider } from '@clerk/nextjs'
 import ClientOnly from '@/components/ClientOnly'
+import ToasterProvider from './providers/ToasterProvider'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ export default function RootLayout({
 
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <ClientOnly>
+              <ToasterProvider />
               {children}
             </ClientOnly>
           </ThemeProvider>

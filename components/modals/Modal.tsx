@@ -4,6 +4,8 @@ import { IoMdClose, IoMdRocket } from "react-icons/io"
 
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "../Button";
+import { Input } from "../inputs/Input";
+import { error } from "console";
 // import { Button } from "../ui/button";
 
 
@@ -145,6 +147,17 @@ export const Modal: React.FC<ModalProps> = ({
                             {/*body*/}
                             <section className="dark:text-black relative p-6 flex-auto">
                                 {body}
+                                {/* <Input
+                                    id="name"
+                                    label="Name"
+                                    type="text"
+                                    disabled={false}
+                                    formatPrice={false}
+                                    required={true}
+                                    register={ }
+                                    errors={null}
+
+                                /> */}
                             </section>
                             {/*footer*/}
                             <footer className="

@@ -23,7 +23,7 @@ const RootLayout = ({
                 disabled={false}
                 secondaryActionLabel=''
             /> */}
-            <RegisterModal />
+            {/* <RegisterModal /> */}
             <Navbar />
             <main className="py-20 px-12">
                 {children}
