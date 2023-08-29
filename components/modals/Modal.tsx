@@ -1,8 +1,11 @@
 "use client"
 
-import { IoMdClose } from "react-icons/io"
+import { IoMdClose, IoMdRocket } from "react-icons/io"
+
 import { useCallback, useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../Button";
+// import { Button } from "../ui/button";
+
 
 
 interface ModalProps {
@@ -13,9 +16,10 @@ interface ModalProps {
     body?: React.ReactElement;
     footer?: React.ReactElement;
     actionLabel: string;
+    buttonLabel: string;
     disabled?: boolean;
     secondaryAction?: () => void;
-    secondaryLabel?: string;
+    secondaryActionLabel?: string;
 
 }
 
@@ -29,7 +33,8 @@ export const Modal: React.FC<ModalProps> = ({
     actionLabel,
     disabled,
     secondaryAction,
-    secondaryLabel
+    secondaryActionLabel,
+    buttonLabel
 }) => {
 
     const [showModal, setShowModal] = useState(isOpen)
@@ -89,7 +94,8 @@ export const Modal: React.FC<ModalProps> = ({
                 md:h-auto
                 ">
                     {/*content*/}
-                    <div className={`translate 
+                    <div className={`
+                    translate 
                     duration-300
                     h-full
                     ${showModal ? "translate-y-0" : "translate-y-full"}
@@ -111,7 +117,8 @@ export const Modal: React.FC<ModalProps> = ({
                         focus:outline-none
                         ">
                             {/*header*/}
-                            <header className="flex
+                            <header className="
+                            flex
                             items-center
                             p-6
                             rounded-t
@@ -140,25 +147,47 @@ export const Modal: React.FC<ModalProps> = ({
                                 {body}
                             </section>
                             {/*footer*/}
-                            <footer className="flex
+                            <footer className="
+                            flex
                             flex-col
                             gap-2
                             p-6 dark:text-black ">
-                                <div className="flex
+                                <div className="
+                                flex
                                 flex-row
                                 items-center
                                 gap-4
                                 w-full
                                 ">
-                                    <Button
+                                    {/* <Button
                                         disabled={disabled}
                                         onClick={handleSubmit}
                                         className="relative w-full dark:text-black"
-                                        variant={'ghost'}
-
+                                        variant={'premium'}
                                     >
-                                        {secondaryLabel}
-                                    </Button>
+                                        {buttonLabel}
+                                    </Button> */}
+                                    {
+                                        secondaryAction && secondaryActionLabel && (
+
+                                            <Button
+                                                outline
+                                                disabled={disabled}
+                                                label={secondaryActionLabel}
+                                                onClick={handleSecondaryAction}
+                                            // icon={IoMdRocket}
+                                            // outline
+                                            />
+                                        )
+                                    }
+
+                                    <Button
+                                        disabled={disabled}
+                                        onClick={handleSubmit}
+                                        label={buttonLabel}
+                                    // icon={IoMdRocket}
+                                    // outline
+                                    />
                                 </div>
                                 {footer}
                             </footer>

@@ -1,6 +1,7 @@
 "use client"
 
 import { Modal } from "@/components/modals/Modal"
+import { RegisterModal } from "@/components/modals/RegisterModal"
 import { Navbar } from "@/components/navbar/Navbar"
 
 const RootLayout = ({
@@ -10,17 +11,19 @@ const RootLayout = ({
 }) => {
     return (
         <div className="h-full">
-            <Modal
-                isOpen={true}
+            {/* <Modal
+                isOpen={false}
                 onClose={() => { }}
                 onSubmit={() => { }}
-                title="Hello World"
-                body={<p className="text-center">This is the Modal Body</p>}
-                footer={<p className="text-center">Modal Footer</p>}
-                actionLabel=""
+                title="I am a Modal"
+                actionLabel="Submit"
+                buttonLabel="Submit"
+                body={<p className="text-center"></p>}
+                footer={<p className="text-center"></p>}
                 disabled={false}
-                secondaryLabel='My Button'
-            />
+                secondaryActionLabel=''
+            /> */}
+            <RegisterModal />
             <Navbar />
             <main className="py-20 px-12">
                 {children}
